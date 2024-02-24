@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemSOList", menuName = "ScriptableObjects/Item/ItemSOList")]
 public class ItemSOList : ScriptableObject
 {
-    public ItemSOList[] items;
+    public List<ItemSO> items;
 }
 
 [CreateAssetMenu(fileName = "ItemSO", menuName = "ScriptableObjects/Item/ItemSO")]

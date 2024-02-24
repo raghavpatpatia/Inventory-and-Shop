@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Armor1
+  m_EditorClassIdentifier: 
+  itemType: 1
+  ItemIcon: {fileID: 21300000, guid: 9d7e931295e92b8419dde467e5f709b8, type: 3}
+  ItemName: Magician's Leather Cape
+  ItemDescription: Basic level cape increases defence stats up by 2% on every 10th
+    hit.
+  ItemBuyingPrice: 10
+  ItemSellingPrice: 8
+  ItemWeight: 0.5
+  itemRarity: 0

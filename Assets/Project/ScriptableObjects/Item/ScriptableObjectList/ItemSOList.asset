@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: ItemSOList
   m_EditorClassIdentifier: Assembly-CSharp::ItemSOList
-  items: []
+  items:
+  - {fileID: 11400000, guid: f17e5e61c1306bb4baadd8e94ab3121d, type: 2}
+  - {fileID: 11400000, guid: 810a931f6cea5af46a39031cb3799441, type: 2}
