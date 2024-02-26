@@ -24,9 +24,16 @@ public class GatherButtonEvent
 
     private ItemSO GenerateRandomItem()
     {
-        ItemSO randomItem = filteredItems[Random.Range(0, filteredItems.Count)];
-        return randomItem;
+        if (filteredItems.Count > 0)
+        {
+            return filteredItems[Random.Range(0, filteredItems.Count)];
+        }
+        else
+        {
+            return null;
+        }
     }
+
     private void AddItemsToFilteredList()
     {
         foreach (ItemSO item in itemList.items)

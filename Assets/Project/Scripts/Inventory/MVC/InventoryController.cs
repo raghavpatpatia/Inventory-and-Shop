@@ -46,6 +46,10 @@ public class InventoryController
 
     ~InventoryController()
     {
-        eventService.AddToInventory.RemoveListener(AddToInventory);
+        if (eventService != null)
+        {
+            eventService.AddToInventory.RemoveListener(AddToInventory);
+        }
     }
+
 }

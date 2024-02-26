@@ -13,6 +13,7 @@
         inventoryItemView.SetInventoryItemController(this);
         inventoryItemView.SetEventService(eventService);
         inventoryItemView.SetItemIcon(inventoryItemModel.itemData.ItemIcon);
+        eventService.OnInventoryItemClickEvent.AddListener(OnInventoryItemClick);
     }
 
     public void IncreaseQuantity(int amount)
@@ -31,5 +32,17 @@
         {
             inventoryItemModel.DecreaseItemQuantity(amount);
         }
+    }
+
+    private void OnInventoryItemClick()
+    {
+        eventService.ItemDescriptionEvent.Invoke(item);
+        eventService.ItemDescriptionPrice.Invoke(string.Format("Selling Price: {0}", item.ItemSellingPrice));
+        eventService.ChangeButtonText.Invoke("Sell");
+    }
+
+    ~InventoryItemController()
+    {
+        eventService.OnInventoryItemClickEvent.RemoveListener(OnInventoryItemClick);
     }
 }

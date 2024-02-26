@@ -9,8 +9,12 @@ public class CloseButton : MonoBehaviour
     [SerializeField] private List<GameObject> deactivateGameObjects;
     private void Start()
     {
-        closeButton.onClick.AddListener(OnCloseButtonClick);
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(OnCloseButtonClick);
+        }
     }
+
     private void OnCloseButtonClick()
     {
         if (deactivateGameObjects != null)

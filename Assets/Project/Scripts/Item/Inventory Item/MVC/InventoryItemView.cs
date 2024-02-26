@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItemView : MonoBehaviour
+public class InventoryItemView : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image itemIcon;
     [SerializeField] private TextMeshProUGUI itemQuantityText;
@@ -13,4 +13,5 @@ public class InventoryItemView : MonoBehaviour
     public void SetEventService(EventService eventService) => this.eventService = eventService;
     public void SetItemIcon(Sprite itemIcon) => this.itemIcon.sprite = itemIcon;
     public void UpdateItemQuantity(int amount) => itemQuantityText.text = amount.ToString();
+    public void OnPointerClick(PointerEventData eventData) => eventService.OnInventoryItemClickEvent.Invoke();
 }

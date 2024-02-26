@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
-  m_Name: ItemSO
+  m_Name: Weapon1
   m_EditorClassIdentifier: 
   itemType: 2
   ItemIcon: {fileID: 21300000, guid: a332f9cc2040f6042a04c65fa9e4a000, type: 3}
