@@ -11,5 +11,5 @@ public class InventoryView : MonoBehaviour
         SetInventoryWeightText();
     }
     public void SetInventoryController(InventoryController inventoryController) => this.inventoryController = inventoryController;
-    public void SetInventoryWeightText() => inventoryWeight.text = string.Format("{0} / {1} KG", inventoryController.GetInventoryWeight(), inventoryController.GetInventoryMaxWeight());
+    public void SetInventoryWeightText() => inventoryWeight.text = string.Format("{0:F1} / {1} KG", inventoryController.GetInventoryWeight(), inventoryController.GetInventoryMaxWeight());
 }

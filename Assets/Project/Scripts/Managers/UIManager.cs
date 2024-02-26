@@ -23,46 +23,40 @@ public class UIManager : MonoBehaviour
     private EventService eventService;
     private GatherButtonEvent gatherButtonEvent;
     private InventoryController inventoryController;
+    private ItemDescriptionController itemDescriptionController;
     public void SetEventService(EventService eventService) => this.eventService = eventService;
-    private void OnEnable()
-    {
-        eventService.OnInventoryItemClickEvent.AddListener(SetItemDescriptionBoxActive);
-    }
     private void Start()
     {
-        SetActiveInventoryView(false);
-        SetActiveShopView(false);
+        inventoryView.gameObject.SetActive(false);
+        gatherButton.gameObject.SetActive(false);
+        shopView.gameObject.SetActive(false);
+        itemDescriptionView.gameObject.SetActive(false);
         Initialize();
         InitializeButtons();
     }
 
     private void InitializeButtons()
     {
-        inventoryButton.onClick.AddListener(() => SetActiveInventoryView(true));
+        inventoryButton.onClick.AddListener(SetActiveInventoryView);
         gatherButton.onClick.AddListener(gatherButtonEvent.GatherItem);
-        shopButton.onClick.AddListener(() => SetActiveShopView(true));
+        shopButton.onClick.AddListener(SetActiveShopView);
     }
     private void Initialize()
     {
         inventoryController = new InventoryController(inventoryScriptableObject, inventoryView, eventService);
         gatherButtonEvent = new GatherButtonEvent(itemScriptableObjectList, eventService, itemRarity);
-        itemDescriptionView.Init(eventService);
+        itemDescriptionController = new ItemDescriptionController(itemDescriptionView, eventService);
     }
-    private void SetActiveInventoryView(bool status) 
+    private void SetActiveInventoryView() 
     { 
-        inventoryView.gameObject.SetActive(status);
-        gatherButton.gameObject.SetActive(status);
-        SetActiveShopView(false);
+        inventoryView.gameObject.SetActive(true);
+        gatherButton.gameObject.SetActive(true);
+        shopView.gameObject.SetActive(false);
     }
-    private void SetActiveShopView(bool status)
+    private void SetActiveShopView()
     {
-        shopView.gameObject.SetActive(status);
-        SetActiveInventoryView(false);
-    }
-
-    private void SetItemDescriptionBoxActive() => itemDescriptionView.gameObject.SetActive(true);
-    private void OnDisable()
-    {
-        eventService.OnInventoryItemClickEvent.RemoveListener(SetItemDescriptionBoxActive);
+        shopView.gameObject.SetActive(true);
+        inventoryView.gameObject.SetActive(false);
+        gatherButton.gameObject.SetActive(false);
     }
 }
