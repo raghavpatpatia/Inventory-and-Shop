@@ -15,6 +15,7 @@ public class InventoryController
         inventoryView.SetInventoryController(this);
         inventoryItemList = new List<InventoryItemController>();
         eventService.AddToInventory.AddListener(AddToInventory);
+        eventService.RemoveFromInventory.AddListener(RemoveFromInventory);
     }
     public float GetInventoryWeight() => inventoryModel.inventoryWeight;
     public float GetInventoryMaxWeight() => inventoryModel.inventoryMaxWeight;
@@ -34,6 +35,20 @@ public class InventoryController
         }
 
     }
+    private void RemoveFromInventory(ItemSO item, int quantity)
+    {
+        InventoryItemController existingItem = inventoryItemList.Find(inventoryItem => inventoryItem.inventoryItemModel.itemData.ItemName == item.ItemName);
+        if (existingItem != null && quantity > 0)
+        {
+            existingItem.DecreaseQuantity(quantity);
+            inventoryModel.DecreaseInventoryWeight(existingItem.inventoryItemModel.itemData.ItemWeight * quantity);
+            inventoryView.SetInventoryWeightText();
+        }
+        else
+        {
+            Debug.Log("No such item in Inventory.");
+        }
+    }
     private void CreateNewItem(ItemSO item, int quantity)
     {
         InventoryItemView itemView = GameObject.Instantiate<InventoryItemView>(inventoryModel.inventoryItem, inventoryView.contentArea.transform);
@@ -49,6 +64,7 @@ public class InventoryController
         if (eventService != null)
         {
             eventService.AddToInventory.RemoveListener(AddToInventory);
+            eventService.RemoveFromInventory.RemoveListener(RemoveFromInventory);
         }
     }
 

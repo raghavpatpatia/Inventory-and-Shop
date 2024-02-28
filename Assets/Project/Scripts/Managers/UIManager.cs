@@ -19,11 +19,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private ShopView shopView;
     [Header("Item Description Box")]
     [SerializeField] private ItemDescriptionView itemDescriptionView;
+    [SerializeField] private Button ItemDescriptionBoxButton;
+    [Header("Item Quantity Box")]
+    [SerializeField] private ItemQuantityView itemQuantityView;
+    [Header("Money")]
+    [SerializeField] private MoneyView moneyView;
+    [Header("Confirmation Box")]
+    [SerializeField] private ConfirmationBoxView confirmationBoxView;
 
     private EventService eventService;
     private GatherButtonEvent gatherButtonEvent;
     private InventoryController inventoryController;
     private ItemDescriptionController itemDescriptionController;
+    private ItemQuantityController itemQuantityController;
+    private MoneyController moneyController;
+    private ConfirmationBoxController confirmationBoxController;
     public void SetEventService(EventService eventService) => this.eventService = eventService;
     private void Start()
     {
@@ -40,12 +50,16 @@ public class UIManager : MonoBehaviour
         inventoryButton.onClick.AddListener(SetActiveInventoryView);
         gatherButton.onClick.AddListener(gatherButtonEvent.GatherItem);
         shopButton.onClick.AddListener(SetActiveShopView);
+        ItemDescriptionBoxButton.onClick.AddListener(SetActiveItemQuantityBox);
     }
     private void Initialize()
     {
         inventoryController = new InventoryController(inventoryScriptableObject, inventoryView, eventService);
         gatherButtonEvent = new GatherButtonEvent(itemScriptableObjectList, eventService, itemRarity);
         itemDescriptionController = new ItemDescriptionController(itemDescriptionView, eventService);
+        itemQuantityController = new ItemQuantityController(itemQuantityView, eventService);
+        moneyController = new MoneyController(moneyView, eventService);
+        confirmationBoxController = new ConfirmationBoxController(confirmationBoxView, eventService);
     }
     private void SetActiveInventoryView() 
     { 
@@ -59,4 +73,5 @@ public class UIManager : MonoBehaviour
         inventoryView.gameObject.SetActive(false);
         gatherButton.gameObject.SetActive(false);
     }
+    private void SetActiveItemQuantityBox() => itemQuantityView.gameObject.SetActive(true);
 }

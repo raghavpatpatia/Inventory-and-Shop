@@ -9,7 +9,6 @@ public class ItemDescriptionView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemDescription;
     [SerializeField] private TextMeshProUGUI itemPrice;
     [SerializeField] private TextMeshProUGUI quantitySelectionButtonText;
-    [SerializeField] private Button quantitySelectionButton;
     private ItemDescriptionController itemDescriptionController;
     public void SetItemDescriptionController(ItemDescriptionController itemDescriptionController) => this.itemDescriptionController = itemDescriptionController;
     public void SetItemImage(Sprite itemIcon) => itemImage.sprite = itemIcon;

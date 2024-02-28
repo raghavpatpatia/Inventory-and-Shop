@@ -16,6 +16,8 @@ public class InventoryItemController
 
     public void IncreaseQuantity(int amount)
     {
+        if (inventoryItemView.gameObject.activeSelf == false)
+            inventoryItemView.gameObject.SetActive(true);
         inventoryItemModel.IncreaseItemQuantity(amount);
         inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
     }
@@ -25,10 +27,13 @@ public class InventoryItemController
         if (inventoryItemModel.itemQuantity - amount <= 0)
         {
             inventoryItemView.gameObject.SetActive(false);
+            inventoryItemModel.itemQuantity = 0;
+            inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
         }
         else
         {
             inventoryItemModel.DecreaseItemQuantity(amount);
+            inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
         }
     }
     public void OnInventoryItemClick() => eventService.OnInventoryItemClickEvent.Invoke(this);

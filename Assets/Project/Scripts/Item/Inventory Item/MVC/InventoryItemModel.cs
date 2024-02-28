@@ -1,7 +1,7 @@
 ﻿public class InventoryItemModel
 {
     private InventoryItemController inventoryItemController;
-    public int itemQuantity { get; private set; }
+    public int itemQuantity;
     public ItemSO itemData { get; private set; }
     public InventoryItemModel(ItemSO itemData, InventoryItemController inventoryItemController)
     {

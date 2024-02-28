@@ -297,6 +297,10 @@ MonoBehaviour:
   inventoryScriptableObject: {fileID: 11400000, guid: 37544d47ad26b9f409f69b7a47657722, type: 2}
   shopView: {fileID: 666958650}
   itemDescriptionView: {fileID: 1540359996}
+  ItemDescriptionBoxButton: {fileID: 1095411991}
+  itemQuantityView: {fileID: 587597429}
+  moneyView: {fileID: 1409497722}
+  confirmationBoxView: {fileID: 809920995}
 --- !u!4 &20712538
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -167.64005}
+  m_AnchoredPosition: {x: 175, y: -167.5237}
   m_SizeDelta: {x: 280, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33715545
@@ -3171,6 +3175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587597428}
+  - component: {fileID: 587597429}
   m_Layer: 5
   m_Name: Item Quantity Selection
   m_TagString: Untagged
@@ -3199,6 +3204,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &587597429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587597427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8533e051307f94c931fb1223e77792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 303463413}
+  itemName: {fileID: 1775661519}
+  itemQuantity: {fileID: 677014570}
+  minusButton: {fileID: 1413968751}
+  plusButton: {fileID: 1594639374}
+  ConfirmationButtonText: {fileID: 224321171}
+  confirmationBoxButton: {fileID: 691396577}
 --- !u!1 &607768548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,6 +4571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809920994}
+  - component: {fileID: 809920995}
   m_Layer: 5
   m_Name: Confirmation Box
   m_TagString: Untagged
@@ -4575,6 +4600,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809920995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809920993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb8c8af3a8616b4c8bf61456c75f435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confirmationText: {fileID: 33715545}
+  confirmationButton: {fileID: 1799478059}
 --- !u!1 &825352302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,6 +5510,7 @@ GameObject:
   - component: {fileID: 937841005}
   - component: {fileID: 937841004}
   - component: {fileID: 937841003}
+  - component: {fileID: 937841006}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -5580,6 +5620,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937841001}
   m_CullTransparentMesh: 1
+--- !u!114 &937841006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937841001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37686ca3dd7f6e84dac9887149604a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 937841003}
+  deactivateGameObjects:
+  - {fileID: 666958648}
 --- !u!1 &944127613
 GameObject:
   m_ObjectHideFlags: 0
@@ -8169,6 +8224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409497721}
+  - component: {fileID: 1409497722}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -8197,6 +8253,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1409497722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409497720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f1fe22ed41041478f90f4610f61daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 2083761960}
 --- !u!1 &1412260476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8533,7 +8602,6 @@ MonoBehaviour:
   itemDescription: {fileID: 503048042}
   itemPrice: {fileID: 1823700866}
   quantitySelectionButtonText: {fileID: 1902357588}
-  quantitySelectionButton: {fileID: 1095411991}
 --- !u!1 &1543968227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9532,7 +9600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -48.380013}
+  m_AnchoredPosition: {x: 175, y: -48.341232}
   m_SizeDelta: {x: 285, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721040354
@@ -9830,6 +9898,7 @@ GameObject:
   - component: {fileID: 1755059048}
   - component: {fileID: 1755059047}
   - component: {fileID: 1755059046}
+  - component: {fileID: 1755059049}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -9939,6 +10008,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755059044}
   m_CullTransparentMesh: 1
+--- !u!114 &1755059049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755059044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37686ca3dd7f6e84dac9887149604a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 1755059046}
+  deactivateGameObjects:
+  - {fileID: 587597427}
 --- !u!1 &1775661517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,6 +10432,7 @@ GameObject:
   - component: {fileID: 1790832677}
   - component: {fileID: 1790832676}
   - component: {fileID: 1790832675}
+  - component: {fileID: 1790832678}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -10457,6 +10542,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790832673}
   m_CullTransparentMesh: 1
+--- !u!114 &1790832678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790832673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37686ca3dd7f6e84dac9887149604a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 1790832675}
+  deactivateGameObjects:
+  - {fileID: 1180452841}
+  - {fileID: 936218221}
 --- !u!1 &1799478057
 GameObject:
   m_ObjectHideFlags: 0
@@ -10469,6 +10570,7 @@ GameObject:
   - component: {fileID: 1799478061}
   - component: {fileID: 1799478060}
   - component: {fileID: 1799478059}
+  - component: {fileID: 1799478062}
   m_Layer: 5
   m_Name: Confirm Button
   m_TagString: Untagged
@@ -10494,7 +10596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -284.40005}
+  m_AnchoredPosition: {x: 175, y: -284.20618}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799478059
@@ -10579,6 +10681,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799478057}
   m_CullTransparentMesh: 1
+--- !u!114 &1799478062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799478057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37686ca3dd7f6e84dac9887149604a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 1799478059}
+  deactivateGameObjects:
+  - {fileID: 809920993}
+  - {fileID: 587597427}
+  - {fileID: 1540359994}
 --- !u!1 &1819347782
 GameObject:
   m_ObjectHideFlags: 0
@@ -12422,6 +12541,7 @@ GameObject:
   - component: {fileID: 2107070327}
   - component: {fileID: 2107070326}
   - component: {fileID: 2107070325}
+  - component: {fileID: 2107070328}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -12531,6 +12651,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107070323}
   m_CullTransparentMesh: 1
+--- !u!114 &2107070328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107070323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37686ca3dd7f6e84dac9887149604a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 2107070325}
+  deactivateGameObjects:
+  - {fileID: 809920993}
+  - {fileID: 587597427}
+  - {fileID: 1540359994}
 --- !u!1 &2115345926
 GameObject:
   m_ObjectHideFlags: 0
