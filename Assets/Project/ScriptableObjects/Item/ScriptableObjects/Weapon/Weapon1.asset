@@ -15,8 +15,12 @@ MonoBehaviour:
   itemType: 2
   ItemIcon: {fileID: 21300000, guid: a332f9cc2040f6042a04c65fa9e4a000, type: 3}
   ItemName: Warrior's Sword
-  ItemDescription: A warrior's sword that increases attack power by 50 points.
+  ItemDescription: Behold the Emberblade, a legendary sword forged in the heart of
+    Dragon's Breath Forge. Its shimmering blade, infused with the essence of fire,
+    deals 50 damage with a +10 bonus against ice creatures. The hilt, adorned with
+    phoenix feathers, grants its wielder +5 agility, ensuring swift strikes in the
+    heat of battle.
   ItemBuyingPrice: 10
   ItemSellingPrice: 8
-  ItemWeight: 0.8
+  ItemWeight: 2
   itemRarity: 0

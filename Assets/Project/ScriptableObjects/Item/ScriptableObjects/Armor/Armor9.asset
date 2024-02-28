@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Armor9
+  m_EditorClassIdentifier: 
+  itemType: 1
+  ItemIcon: {fileID: 21300000, guid: 6ac270cb5af314a42af64960c696a8a1, type: 3}
+  ItemName: Knight's Armor
+  ItemDescription: Behold the Celestial Guardian's Armor, forged from the scales
+    of ancient star dragons. Imbued with the essence of the cosmos, this extraordinary
+    armor provides +50 defense and allows the wearer to move with the grace of moonlight,
+    evading attacks with a 15% increased agility. In addition, the armor bestows
+    the power of astral resilience, reducing magical damage by 25%.
+  ItemBuyingPrice: 240
+  ItemSellingPrice: 210
+  ItemWeight: 15
+  itemRarity: 3

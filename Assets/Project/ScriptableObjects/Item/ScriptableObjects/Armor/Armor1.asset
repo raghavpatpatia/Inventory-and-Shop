@@ -15,9 +15,11 @@ MonoBehaviour:
   itemType: 1
   ItemIcon: {fileID: 21300000, guid: 9d7e931295e92b8419dde467e5f709b8, type: 3}
   ItemName: Magician's Leather Cape
-  ItemDescription: Basic level cape increases defence stats up by 2% on every 10th
-    hit.
+  ItemDescription: The Magician's Leather Cape, adorned with ethereal runes, grants
+    a +10 bonus to spellcasting agility and a +5 resistance against mystical attacks.
+    Crafted from enchanted wyvern hide, this lightweight armor elegantly melds style
+    with sorcery, offering wizards unparalleled mobility in the arcane arts.
   ItemBuyingPrice: 10
   ItemSellingPrice: 8
-  ItemWeight: 0.5
+  ItemWeight: 1
   itemRarity: 0

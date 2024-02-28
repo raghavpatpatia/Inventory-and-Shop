@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: ConsumableItem2
+  m_EditorClassIdentifier: 
+  itemType: 3
+  ItemIcon: {fileID: 21300000, guid: 0edcb30428af9c34b9114c75ee984bf2, type: 3}
+  ItemName: Antidote Potion
+  ItemDescription: The Antidote Potion sparkles with a luminescent azure hue, housed
+    in a delicate vial adorned with enchanted vines. Upon consumption, it instantly
+    cures common ailments, providing +20 to health and cleansing the body of minor
+    poisons and curses.
+  ItemBuyingPrice: 100
+  ItemSellingPrice: 80
+  ItemWeight: 2
+  itemRarity: 1

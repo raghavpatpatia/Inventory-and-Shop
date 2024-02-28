@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Weapon5
+  m_EditorClassIdentifier: 
+  itemType: 2
+  ItemIcon: {fileID: 21300000, guid: b6827d89660e3f440aae922e041e2a38, type: 3}
+  ItemName: Iron Axe
+  ItemDescription: Behold the Embersteel Cleaver, a common fantasy Iron Axe infused
+    with the essence of fire. Its blade, forged from enchanted iron, deals 15 damage
+    with a fiery touch, making it a formidable weapon for both lumberjacks and adventurers
+    alike.
+  ItemBuyingPrice: 80
+  ItemSellingPrice: 70
+  ItemWeight: 10
+  itemRarity: 1

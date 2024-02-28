@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Armor10
+  m_EditorClassIdentifier: 
+  itemType: 1
+  ItemIcon: {fileID: 21300000, guid: 1324b08bd976ef442be39a3edef41f88, type: 3}
+  ItemName: Dark Knight's Armor
+  ItemDescription: The Dark Knight's Armor, forged in the fires of an ancient abyss,
+    radiates an ominous aura. Its obsidian plates provide unparalleled protection,
+    granting a +30 defense bonus, while the embedded shadow gems enhance agility,
+    allowing the wearer to move silently with a +20 agility bonus. Imbued with dark
+    enchantments, this armor strikes fear into the hearts of enemies, reducing their
+    morale by -15%.
+  ItemBuyingPrice: 280
+  ItemSellingPrice: 250
+  ItemWeight: 20
+  itemRarity: 3
