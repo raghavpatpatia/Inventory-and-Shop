@@ -1,6 +1,4 @@
-﻿using UnityEditor.MPE;
-
-public class InventoryItemController
+﻿public class InventoryItemController
 {
     public InventoryItemModel inventoryItemModel { get; private set; }
     private InventoryItemView inventoryItemView;

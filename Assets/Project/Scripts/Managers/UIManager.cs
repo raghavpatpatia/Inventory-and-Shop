@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private InventorySO inventoryScriptableObject;
     [Header("Shop")]
     [SerializeField] private ShopView shopView;
+    [SerializeField] private ShopScriptableObject shopScriptableObject;
     [Header("Item Description Box")]
     [SerializeField] private ItemDescriptionView itemDescriptionView;
     [SerializeField] private Button ItemDescriptionBoxButton;
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour
     private ItemQuantityController itemQuantityController;
     private MoneyController moneyController;
     private ConfirmationBoxController confirmationBoxController;
+    private ShopController shopController;
     public void SetEventService(EventService eventService) => this.eventService = eventService;
     private void Start()
     {
@@ -60,6 +62,7 @@ public class UIManager : MonoBehaviour
         itemQuantityController = new ItemQuantityController(itemQuantityView, eventService);
         moneyController = new MoneyController(moneyView, eventService);
         confirmationBoxController = new ConfirmationBoxController(confirmationBoxView, eventService);
+        shopController = new ShopController(itemScriptableObjectList, shopView, shopScriptableObject, eventService);
     }
     private void SetActiveInventoryView() 
     { 
