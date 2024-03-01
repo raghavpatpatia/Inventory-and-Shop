@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Weapon6
+  m_EditorClassIdentifier: 
+  itemType: 2
+  ItemIcon: {fileID: 21300000, guid: 3f5b302f67e2fc24ba1ff12ffd0da746, type: 3}
+  ItemName: Shadow Dagger
+  ItemDescription: The Shadow Dagger, crafted from obsidian infused with ancient
+    magic, grants its wielder unparalleled stealth and lethality. With a +30 bonus
+    to agility and a 20% chance to inflict crippling darkness upon foes, it's a coveted
+    weapon among rogues and assassins in the realm of shadows.
+  ItemBuyingPrice: 1000
+  ItemSellingPrice: 700
+  ItemWeight: 20
+  itemRarity: 3

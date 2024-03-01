@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: ConsumableItem5
+  m_EditorClassIdentifier: 
+  itemType: 3
+  ItemIcon: {fileID: 21300000, guid: 9f39bedbc179aed4088082040308e213, type: 3}
+  ItemName: Revival Potion
+  ItemDescription: The Elixir of Resurgence, a legendary Revival Potion, emanates
+    a mystical glow. Consuming it instantly restores life to the fallen, granting
+    100% health and 50% mana, while bestowing temporary invincibility for 10 seconds.
+    Legends say its creation requires rare phoenix feathers and tears of ancient
+    spirits.
+  ItemBuyingPrice: 6000
+  ItemSellingPrice: 5000
+  ItemWeight: 10
+  itemRarity: 4

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
+  m_Name: Weapon10
+  m_EditorClassIdentifier: 
+  itemType: 2
+  ItemIcon: {fileID: 21300000, guid: cb19e9b3506e2854e8e22f02c8996e63, type: 3}
+  ItemName: Earth Bow
+  ItemDescription: The Ethereal Serpent Bow, forged from the enchanted scales of
+    ancient moon serpents, radiates a soft, celestial glow. Imbued with mystical
+    energies, this Rare bow boasts a +15% bonus to accuracy and a chance to release
+    a lunar shockwave on critical hits, stunning foes in its ethereal brilliance.
+  ItemBuyingPrice: 150
+  ItemSellingPrice: 100
+  ItemWeight: 15
+  itemRarity: 2
