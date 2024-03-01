@@ -33,7 +33,8 @@ public class InventoryController
             else
                 CreateNewItem(item, quantity);
         }
-
+        else
+            eventService.DisplayMessage.Invoke("Cannot add items to inventory.");
     }
     private void RemoveFromInventory(ItemSO item, int quantity)
     {
@@ -46,7 +47,7 @@ public class InventoryController
         }
         else
         {
-            Debug.Log("No such item in Inventory.");
+            eventService.DisplayMessage.Invoke("No such item in inventory.");
         }
     }
     private void CreateNewItem(ItemSO item, int quantity)

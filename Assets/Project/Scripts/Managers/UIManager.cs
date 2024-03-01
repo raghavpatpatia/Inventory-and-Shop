@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private MoneyView moneyView;
     [Header("Confirmation Box")]
     [SerializeField] private ConfirmationBoxView confirmationBoxView;
+    [Header("Message Box")]
+    [SerializeField] private MessageBoxView messageBoxView;
 
     private EventService eventService;
     private GatherButtonEvent gatherButtonEvent;
@@ -36,6 +38,7 @@ public class UIManager : MonoBehaviour
     private MoneyController moneyController;
     private ConfirmationBoxController confirmationBoxController;
     private ShopController shopController;
+    private MessageBoxController messageBoxController;
     public void SetEventService(EventService eventService) => this.eventService = eventService;
     private void Start()
     {
@@ -59,10 +62,11 @@ public class UIManager : MonoBehaviour
         inventoryController = new InventoryController(inventoryScriptableObject, inventoryView, eventService);
         gatherButtonEvent = new GatherButtonEvent(itemScriptableObjectList, eventService, itemRarity);
         itemDescriptionController = new ItemDescriptionController(itemDescriptionView, eventService);
-        itemQuantityController = new ItemQuantityController(itemQuantityView, eventService);
         moneyController = new MoneyController(moneyView, eventService);
+        itemQuantityController = new ItemQuantityController(itemQuantityView, eventService, moneyController);
         confirmationBoxController = new ConfirmationBoxController(confirmationBoxView, eventService);
         shopController = new ShopController(itemScriptableObjectList, shopView, shopScriptableObject, eventService);
+        messageBoxController = new MessageBoxController(messageBoxView, eventService);
     }
     private void SetActiveInventoryView() 
     { 

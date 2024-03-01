@@ -30,7 +30,6 @@ public class ShopView : MonoBehaviour
         WeaponButton.onClick.AddListener(OnWeaponButtonClick);
         ConsumableButton.onClick.AddListener(OnConsumableButtonClick);
         TreasureButton.onClick.AddListener(OnTreasureButtonClick);
-        Material.SetActive(true);
     }
     private void Start() => shopController.AddItemToShop(MaterialContentTransform, ArmorContentTransform, WeaponContentTransform, ConsumableContentTransform, TreasureContentTransform);
     private void OnMaterialButtonClick()

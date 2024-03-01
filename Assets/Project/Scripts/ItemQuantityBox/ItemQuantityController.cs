@@ -6,13 +6,16 @@ public class ItemQuantityController
     private int currentItemQuantity;
     private int maxItemQuantity;
     private EventService eventService;
+    private MoneyController moneyController;
     private ItemSO item;
     private bool isSelling;
-    public ItemQuantityController(ItemQuantityView itemQuantityView, EventService eventService)
+    public ItemQuantityController(ItemQuantityView itemQuantityView, EventService eventService, MoneyController moneyController)
     {
         this.itemQuantityView = itemQuantityView;
         itemQuantityView.SetItemQuantityController(this);
         this.eventService = eventService;
+        this.moneyController = moneyController;
+        eventService.OnShopItemClickEvent.AddListener(OnShopItemClick);
         eventService.OnInventoryItemClickEvent.AddListener(OnInventoryItemClick);
         eventService.OnConfirmButtonClick.AddListener(ItemTransaction);
     }
@@ -26,6 +29,17 @@ public class ItemQuantityController
         maxItemQuantity = inventoryItem.inventoryItemModel.itemQuantity;
         itemQuantityView.SetConfirmationButtonText("Sell");
         item = inventoryItem.inventoryItemModel.itemData;
+    }
+    private void OnShopItemClick(ShopItemController shopItem)
+    {
+        isSelling = false;
+        itemQuantityView.SetItemIcon(shopItem.shopItemModel.item.ItemIcon);
+        itemQuantityView.SetItemName(shopItem.shopItemModel.item.ItemName);
+        currentItemQuantity = 1;
+        itemQuantityView.SetItemQuantity(currentItemQuantity);
+        maxItemQuantity = int.MaxValue;
+        itemQuantityView.SetConfirmationButtonText("Buy");
+        item = shopItem.shopItemModel.item;
     }
     public void OnConfirmationBoxButtonClick()
     {
@@ -50,12 +64,25 @@ public class ItemQuantityController
     {
         if (isSelling)
         {
-            eventService.AddMoney.Invoke(item.ItemSellingPrice * currentItemQuantity);
+            moneyController.AddMoney(item.ItemSellingPrice * currentItemQuantity);
             eventService.RemoveFromInventory.Invoke(item, currentItemQuantity);
+        }
+        else if (!isSelling)
+        {
+            if (moneyController.currentMoney >= item.ItemBuyingPrice * currentItemQuantity)
+            {
+                moneyController.SubtractMoney(item.ItemBuyingPrice * currentItemQuantity);
+                eventService.AddToInventory.Invoke(item, currentItemQuantity);
+            }
+            else
+            {
+                eventService.DisplayMessage.Invoke("Not enough money.");
+            }
         }
     }
     ~ItemQuantityController()
     {
+        eventService.OnShopItemClickEvent.RemoveListener(OnShopItemClick);
         eventService.OnInventoryItemClickEvent.RemoveListener(OnInventoryItemClick);
         eventService.OnConfirmButtonClick.RemoveListener(ItemTransaction);
     }
