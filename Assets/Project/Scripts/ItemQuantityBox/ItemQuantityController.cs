@@ -9,7 +9,8 @@ public class ItemQuantityController
     private MoneyController moneyController;
     private ItemSO item;
     private bool isSelling;
-    public ItemQuantityController(ItemQuantityView itemQuantityView, EventService eventService, MoneyController moneyController)
+    private SoundController soundController;
+    public ItemQuantityController(ItemQuantityView itemQuantityView, EventService eventService, MoneyController moneyController, SoundController soundController)
     {
         this.itemQuantityView = itemQuantityView;
         itemQuantityView.SetItemQuantityController(this);
@@ -18,6 +19,7 @@ public class ItemQuantityController
         eventService.OnShopItemClickEvent.AddListener(OnShopItemClick);
         eventService.OnInventoryItemClickEvent.AddListener(OnInventoryItemClick);
         eventService.OnConfirmButtonClick.AddListener(ItemTransaction);
+        this.soundController = soundController;
     }
     private void OnInventoryItemClick(InventoryItemController inventoryItem)
     {
@@ -66,6 +68,7 @@ public class ItemQuantityController
         {
             moneyController.AddMoney(item.ItemSellingPrice * currentItemQuantity);
             eventService.RemoveFromInventory.Invoke(item, currentItemQuantity);
+            soundController.PlayMusic(Sounds.SuccessfulItemSelling);
         }
         else if (!isSelling)
         {
@@ -73,6 +76,7 @@ public class ItemQuantityController
             {
                 moneyController.SubtractMoney(item.ItemBuyingPrice * currentItemQuantity);
                 eventService.AddToInventory.Invoke(item, currentItemQuantity);
+                soundController.PlayMusic(Sounds.SuccessfulItemBuying);
             }
             else
             {

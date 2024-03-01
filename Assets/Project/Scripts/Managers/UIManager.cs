@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private MessageBoxView messageBoxView;
 
     private EventService eventService;
+    private SoundController soundController;
     private GatherButtonEvent gatherButtonEvent;
     private InventoryController inventoryController;
     private ItemDescriptionController itemDescriptionController;
@@ -39,7 +40,11 @@ public class UIManager : MonoBehaviour
     private ConfirmationBoxController confirmationBoxController;
     private ShopController shopController;
     private MessageBoxController messageBoxController;
-    public void SetEventService(EventService eventService) => this.eventService = eventService;
+    public void Init(EventService eventService, SoundController soundController)
+    {
+        this.eventService = eventService;
+        this.soundController = soundController;
+    }
     private void Start()
     {
         inventoryView.gameObject.SetActive(false);
@@ -60,10 +65,10 @@ public class UIManager : MonoBehaviour
     private void Initialize()
     {
         inventoryController = new InventoryController(inventoryScriptableObject, inventoryView, eventService);
-        gatherButtonEvent = new GatherButtonEvent(itemScriptableObjectList, eventService, itemRarity);
+        gatherButtonEvent = new GatherButtonEvent(itemScriptableObjectList, eventService, itemRarity, soundController);
         itemDescriptionController = new ItemDescriptionController(itemDescriptionView, eventService);
         moneyController = new MoneyController(moneyView, eventService);
-        itemQuantityController = new ItemQuantityController(itemQuantityView, eventService, moneyController);
+        itemQuantityController = new ItemQuantityController(itemQuantityView, eventService, moneyController, soundController);
         confirmationBoxController = new ConfirmationBoxController(confirmationBoxView, eventService);
         shopController = new ShopController(itemScriptableObjectList, shopView, shopScriptableObject, eventService);
         messageBoxController = new MessageBoxController(messageBoxView, eventService);

@@ -6,20 +6,23 @@ public class GatherButtonEvent
     private ItemSOList itemList;
     private EventService eventService;
     private ItemRarity itemRarity;
+    private SoundController soundController;
     private List<ItemSO> filteredItems;
-    public GatherButtonEvent(ItemSOList itemList, EventService eventService, ItemRarity itemRarity)
+    public GatherButtonEvent(ItemSOList itemList, EventService eventService, ItemRarity itemRarity, SoundController soundController)
     {
         this.itemList = itemList;
         this.eventService = eventService;
         this.itemRarity = itemRarity;
         filteredItems = new List<ItemSO>();
         AddItemsToFilteredList();
+        this.soundController = soundController;
     }
 
     public void GatherItem()
     {
         ItemSO item = GenerateRandomItem();
         eventService.AddToInventory.Invoke(item, 1);
+        soundController.PlayMusic(Sounds.GatherButtonClick);
     }
 
     private ItemSO GenerateRandomItem()
