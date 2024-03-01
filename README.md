@@ -29,3 +29,6 @@ The codebase follows a modular structure with an emphasis on the following desig
 
 This project has no external dependencies beyond the Unity game engine.
 
+## Watch the Demo Video
+
+[![Unity Inventory and Shop System Demo](https://img.youtube.com/vi/nCchYyL-p_k/0.jpg)](https://youtu.be/nCchYyL-p_k)
