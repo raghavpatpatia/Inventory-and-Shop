@@ -61,6 +61,7 @@ public class UIManager : MonoBehaviour
         gatherButton.onClick.AddListener(gatherButtonEvent.GatherItem);
         shopButton.onClick.AddListener(SetActiveShopView);
         ItemDescriptionBoxButton.onClick.AddListener(SetActiveItemQuantityBox);
+        quitButton.onClick.AddListener(QuitGame);
     }
     private void Initialize()
     {
@@ -86,4 +87,12 @@ public class UIManager : MonoBehaviour
         gatherButton.gameObject.SetActive(false);
     }
     private void SetActiveItemQuantityBox() => itemQuantityView.gameObject.SetActive(true);
+    private void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
