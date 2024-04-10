@@ -6,6 +6,8 @@ Welcome to the Unity Inventory and Shop System project! This project provides a 
 
 This Unity project focuses on implementing a flexible and extensible inventory and shop system. It includes a UI manager, inventory management, shop functionality, money management, and more. The codebase is designed to be modular, making it easy to understand, extend, and customize for games requiring inventory and shop features.
 
+**Watch the demo video: [Unity Inventory and Shop System Demo](https://youtu.be/nCchYyL-p_k)**
+
 ## Features
 
 - **UI Manager**: Manages the game's user interface, including main menu buttons, inventory display, shop interface, and more.
@@ -26,4 +28,13 @@ The codebase follows a modular structure with an emphasis on the following desig
 ## Dependencies
 
 This project has no external dependencies beyond the Unity game engine.
+
+## Watch the Demo Video
+
+[![Unity Inventory and Shop System Demo](https://img.youtube.com/vi/nCchYyL-p_k/0.jpg)](https://www.youtube.com/watch?v=nCchYyL-p_k)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
 
