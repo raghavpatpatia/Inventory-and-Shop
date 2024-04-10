@@ -13,21 +13,21 @@
     public void OnInventoryItemSelected(InventoryItemController inventoryItem)
     {
         itemDescriptionView.gameObject.SetActive(true);
-        itemDescriptionView.SetItemImage(inventoryItem.inventoryItemModel.itemData.ItemIcon);
-        itemDescriptionView.SetItemName(inventoryItem.inventoryItemModel.itemData.ItemName);
-        itemDescriptionView.SetItemDescription(inventoryItem.inventoryItemModel.itemData.ItemDescription);
-        itemDescriptionView.SetItemPrice(string.Format("Selling Price: {0}", inventoryItem.inventoryItemModel.itemData.ItemSellingPrice));
-        itemDescriptionView.SetItemWeight(string.Format("Weight: {0}", inventoryItem.inventoryItemModel.itemData.ItemWeight));
+        itemDescriptionView.SetItemImage(inventoryItem.InventoryItemModel.ItemData.ItemIcon);
+        itemDescriptionView.SetItemName(inventoryItem.InventoryItemModel.ItemData.ItemName);
+        itemDescriptionView.SetItemDescription(inventoryItem.InventoryItemModel.ItemData.ItemDescription);
+        itemDescriptionView.SetItemPrice(string.Format("Selling Price: {0}", inventoryItem.InventoryItemModel.ItemData.ItemSellingPrice));
+        itemDescriptionView.SetItemWeight(string.Format("Weight: {0}", inventoryItem.InventoryItemModel.ItemData.ItemWeight));
         itemDescriptionView.SetQuantitySelectionButtonText("Sell");
     }
     public void OnShopItemSelected(ShopItemController shopItem)
     {
         itemDescriptionView.gameObject.SetActive(true);
-        itemDescriptionView.SetItemImage(shopItem.shopItemModel.item.ItemIcon);
-        itemDescriptionView.SetItemName(shopItem.shopItemModel.item.ItemName);
-        itemDescriptionView.SetItemDescription(shopItem.shopItemModel.item.ItemDescription);
-        itemDescriptionView.SetItemPrice(string.Format("Buying Price: {0}", shopItem.shopItemModel.item.ItemBuyingPrice));
-        itemDescriptionView.SetItemWeight(string.Format("Weight: {0}", shopItem.shopItemModel.item.ItemWeight));
+        itemDescriptionView.SetItemImage(shopItem.ShopItemModel.Item.ItemIcon);
+        itemDescriptionView.SetItemName(shopItem.ShopItemModel.Item.ItemName);
+        itemDescriptionView.SetItemDescription(shopItem.ShopItemModel.Item.ItemDescription);
+        itemDescriptionView.SetItemPrice(string.Format("Buying Price: {0}", shopItem.ShopItemModel.Item.ItemBuyingPrice));
+        itemDescriptionView.SetItemWeight(string.Format("Weight: {0}", shopItem.ShopItemModel.Item.ItemWeight));
         itemDescriptionView.SetQuantitySelectionButtonText("Buy");
     }
     ~ItemDescriptionController()

@@ -22,7 +22,7 @@ public class GatherButtonEvent
     {
         ItemSO item = GenerateRandomItem();
         eventService.AddToInventory.Invoke(item, 1);
-        soundController.PlayMusic(Sounds.GatherButtonClick);
+        soundController.PlayMusic(Sounds.GATHERBUTTONCLICK);
     }
 
     private ItemSO GenerateRandomItem()
@@ -39,9 +39,9 @@ public class GatherButtonEvent
 
     private void AddItemsToFilteredList()
     {
-        foreach (ItemSO item in itemList.items)
+        foreach (ItemSO item in itemList.Items)
         {
-            if (item.itemRarity == itemRarity)
+            if (item.ItemRarity == itemRarity)
                 filteredItems.Add(item);
         }
     }

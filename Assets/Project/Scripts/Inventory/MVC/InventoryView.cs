@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InventoryView : MonoBehaviour
 {
-    [SerializeField] public GameObject contentArea;
+    public GameObject ContentArea;
     [SerializeField] private TextMeshProUGUI inventoryWeight;
     private InventoryController inventoryController;
     private void Start()

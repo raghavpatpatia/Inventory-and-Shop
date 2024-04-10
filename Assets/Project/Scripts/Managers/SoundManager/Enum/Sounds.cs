@@ -1,7 +1,7 @@
 ﻿public enum Sounds
 {
-    BGMusic,
-    GatherButtonClick,
-    SuccessfulItemBuying,
-    SuccessfulItemSelling
+    BGMUSIC,
+    GATHERBUTTONCLICK,
+    SUCCESSFULITEMBUYING,
+    SUCCESSFULITEMSELLING
 }

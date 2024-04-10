@@ -4,72 +4,81 @@ using UnityEngine.UI;
 public class ShopView : MonoBehaviour
 {
     [Header("Buttons")]
-    [SerializeField] private Button MaterialButton;
-    [SerializeField] private Button ArmorButton;
-    [SerializeField] private Button WeaponButton;
-    [SerializeField] private Button ConsumableButton;
-    [SerializeField] private Button TreasureButton;
+    [SerializeField] private Button materialButton;
+    [SerializeField] private Button armorButton;
+    [SerializeField] private Button weaponButton;
+    [SerializeField] private Button consumableButton;
+    [SerializeField] private Button treasureButton;
     [Header("Panels")]
-    [SerializeField] private GameObject Material;
-    [SerializeField] private GameObject Armor;
-    [SerializeField] private GameObject Weapon;
-    [SerializeField] private GameObject Consumable;
-    [SerializeField] private GameObject Treasure;
+    [SerializeField] private GameObject material;
+    [SerializeField] private GameObject armor;
+    [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject consumable;
+    [SerializeField] private GameObject treasure;
     [Header("Content Area")]
-    [SerializeField] private Transform MaterialContentTransform;
-    [SerializeField] private Transform ArmorContentTransform;
-    [SerializeField] private Transform WeaponContentTransform;
-    [SerializeField] private Transform ConsumableContentTransform;
-    [SerializeField] private Transform TreasureContentTransform;
+    [SerializeField] private Transform materialContentTransform;
+    [SerializeField] private Transform armorContentTransform;
+    [SerializeField] private Transform weaponContentTransform;
+    [SerializeField] private Transform consumableContentTransform;
+    [SerializeField] private Transform treasureContentTransform;
     private ShopController shopController;
     public void SetShopController(ShopController shopController) => this.shopController = shopController;
     private void OnEnable()
     {
-        MaterialButton.onClick.AddListener(OnMaterialButtonClick);
-        ArmorButton.onClick.AddListener(OnArmorButtonClick);
-        WeaponButton.onClick.AddListener(OnWeaponButtonClick);
-        ConsumableButton.onClick.AddListener(OnConsumableButtonClick);
-        TreasureButton.onClick.AddListener(OnTreasureButtonClick);
+        materialButton.onClick.AddListener(OnMaterialButtonClick);
+        armorButton.onClick.AddListener(OnArmorButtonClick);
+        weaponButton.onClick.AddListener(OnWeaponButtonClick);
+        consumableButton.onClick.AddListener(OnConsumableButtonClick);
+        treasureButton.onClick.AddListener(OnTreasureButtonClick);
     }
-    private void Start() => shopController.AddItemToShop(MaterialContentTransform, ArmorContentTransform, WeaponContentTransform, ConsumableContentTransform, TreasureContentTransform);
+    private void Start() => shopController.AddItemToShop(materialContentTransform, armorContentTransform, weaponContentTransform, consumableContentTransform, treasureContentTransform);
     private void OnMaterialButtonClick()
     {
-        Material.SetActive(true);
-        Armor.SetActive(false);
-        Weapon.SetActive(false);
-        Consumable.SetActive(false);
-        Treasure.SetActive(false);
+        material.SetActive(true);
+        armor.SetActive(false);
+        weapon.SetActive(false);
+        consumable.SetActive(false);
+        treasure.SetActive(false);
     }
     private void OnArmorButtonClick()
     {
-        Material.SetActive(false);
-        Armor.SetActive(true);
-        Weapon.SetActive(false);
-        Consumable.SetActive(false);
-        Treasure.SetActive(false);
+        material.SetActive(false);
+        armor.SetActive(true);
+        weapon.SetActive(false);
+        consumable.SetActive(false);
+        treasure.SetActive(false);
     }
     private void OnWeaponButtonClick()
     {
-        Material.SetActive(false);
-        Armor.SetActive(false);
-        Weapon.SetActive(true);
-        Consumable.SetActive(false);
-        Treasure.SetActive(false);
+        material.SetActive(false);
+        armor.SetActive(false);
+        weapon.SetActive(true);
+        consumable.SetActive(false);
+        treasure.SetActive(false);
     }
     private void OnConsumableButtonClick()
     {
-        Material.SetActive(false);
-        Armor.SetActive(false);
-        Weapon.SetActive(false);
-        Consumable.SetActive(true);
-        Treasure.SetActive(false);
+        material.SetActive(false);
+        armor.SetActive(false);
+        weapon.SetActive(false);
+        consumable.SetActive(true);
+        treasure.SetActive(false);
     }
     private void OnTreasureButtonClick()
     {
-        Material.SetActive(false);
-        Armor.SetActive(false);
-        Weapon.SetActive(false);
-        Consumable.SetActive(false);
-        Treasure.SetActive(true);
+        material.SetActive(false);
+        armor.SetActive(false);
+        weapon.SetActive(false);
+        consumable.SetActive(false);
+        treasure.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        materialButton.onClick.RemoveListener(OnMaterialButtonClick);
+        armorButton.onClick.RemoveListener(OnArmorButtonClick);
+        weaponButton.onClick.RemoveListener(OnWeaponButtonClick);
+        consumableButton.onClick.RemoveListener(OnConsumableButtonClick);
+        treasureButton.onClick.RemoveListener(OnTreasureButtonClick);
     }
 }

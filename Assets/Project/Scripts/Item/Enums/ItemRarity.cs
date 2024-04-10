@@ -1,8 +1,8 @@
 ﻿public enum ItemRarity
 {
-    VeryCommon,
-    Common,
-    Rare,
-    Epic,
-    Legendary
+    VERYCOMMON,
+    COMMON,
+    RARE,
+    EPIC,
+    LEGENDARY
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85a6d450e7d2f04f85a2e0e82327f35, type: 3}
   m_Name: ShopSO
   m_EditorClassIdentifier: 
-  shopItem: {fileID: 8887665149297515990, guid: 89c2208858f7449419f225fd8fb2a610, type: 3}
+  ShopItem: {fileID: 8887665149297515990, guid: 89c2208858f7449419f225fd8fb2a610, type: 3}

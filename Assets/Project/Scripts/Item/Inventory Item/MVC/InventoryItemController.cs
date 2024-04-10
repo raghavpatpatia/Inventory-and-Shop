@@ -1,14 +1,14 @@
 ﻿public class InventoryItemController
 {
-    public InventoryItemModel inventoryItemModel { get; private set; }
+    public InventoryItemModel InventoryItemModel { get; private set; }
     private InventoryItemView inventoryItemView;
     private EventService eventService;
     public InventoryItemController(ItemSO item, InventoryItemView inventoryItemView, EventService eventService)
     {
-        this.inventoryItemModel = new InventoryItemModel(item, this);
+        this.InventoryItemModel = new InventoryItemModel(item, this);
         this.inventoryItemView = inventoryItemView;
         inventoryItemView.SetInventoryItemController(this);
-        inventoryItemView.SetItemIcon(inventoryItemModel.itemData.ItemIcon);
+        inventoryItemView.SetItemIcon(InventoryItemModel.ItemData.ItemIcon);
         this.eventService = eventService;
     }
 
@@ -16,22 +16,22 @@
     {
         if (inventoryItemView.gameObject.activeSelf == false)
             inventoryItemView.gameObject.SetActive(true);
-        inventoryItemModel.IncreaseItemQuantity(amount);
-        inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
+        InventoryItemModel.IncreaseItemQuantity(amount);
+        inventoryItemView.UpdateItemQuantity(InventoryItemModel.ItemQuantity);
     }
 
     public void DecreaseQuantity(int amount)
     {
-        if (inventoryItemModel.itemQuantity - amount <= 0)
+        if (InventoryItemModel.ItemQuantity - amount <= 0)
         {
             inventoryItemView.gameObject.SetActive(false);
-            inventoryItemModel.itemQuantity = 0;
-            inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
+            InventoryItemModel.ItemQuantity = 0;
+            inventoryItemView.UpdateItemQuantity(InventoryItemModel.ItemQuantity);
         }
         else
         {
-            inventoryItemModel.DecreaseItemQuantity(amount);
-            inventoryItemView.UpdateItemQuantity(inventoryItemModel.itemQuantity);
+            InventoryItemModel.DecreaseItemQuantity(amount);
+            inventoryItemView.UpdateItemQuantity(InventoryItemModel.ItemQuantity);
         }
     }
     public void OnInventoryItemClick() => eventService.OnInventoryItemClickEvent.Invoke(this);

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: Armor3
   m_EditorClassIdentifier: 
-  itemType: 1
+  ItemType: 1
   ItemIcon: {fileID: 21300000, guid: 6030a7103becf0c46aa1905abbd6a39a, type: 3}
   ItemName: Gladiator Helmet
   ItemDescription: Behold the Astral Crest, a fantasy gladiator helmet adorned with
@@ -22,4 +22,4 @@ MonoBehaviour:
   ItemBuyingPrice: 200
   ItemSellingPrice: 150
   ItemWeight: 10
-  itemRarity: 2
+  ItemRarity: 2

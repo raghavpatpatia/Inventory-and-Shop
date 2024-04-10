@@ -3,8 +3,8 @@
 public class GameManager : MonoBehaviour
 {
     [Header("Sound")]
-    [SerializeField] private AudioSource BackgroundMusic;
-    [SerializeField] private AudioSource SoundEffect;
+    [SerializeField] private AudioSource backgroundMusic;
+    [SerializeField] private AudioSource soundEffect;
     [SerializeField] private SoundType[] soundTypes;
     [Header("UI Manager")]
     [SerializeField] private UIManager uiManager;
@@ -13,13 +13,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Initialize();
-        soundController.PlayBGMusic(Sounds.BGMusic);
+        soundController.PlayBGMusic(Sounds.BGMUSIC);
     }
 
     private void Initialize()
     {
         eventService = new EventService();
-        soundController = new SoundController(SoundEffect, BackgroundMusic, soundTypes);
+        soundController = new SoundController(soundEffect, backgroundMusic, soundTypes);
         uiManager.Init(eventService, soundController);
     }
 }

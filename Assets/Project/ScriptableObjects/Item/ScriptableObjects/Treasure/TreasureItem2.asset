@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: TreasureItem2
   m_EditorClassIdentifier: 
-  itemType: 4
+  ItemType: 4
   ItemIcon: {fileID: 21300000, guid: a7fa02c269abaed47bd3a49986381846, type: 3}
   ItemName: Ember Band
   ItemDescription: Behold the Enchanted Ember Band, a fantasy treasure gold ring
@@ -22,4 +22,4 @@ MonoBehaviour:
   ItemBuyingPrice: 1000
   ItemSellingPrice: 900
   ItemWeight: 1
-  itemRarity: 1
+  ItemRarity: 1

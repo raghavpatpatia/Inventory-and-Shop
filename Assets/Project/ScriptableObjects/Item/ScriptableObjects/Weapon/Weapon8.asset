@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: Weapon8
   m_EditorClassIdentifier: 
-  itemType: 2
+  ItemType: 2
   ItemIcon: {fileID: 21300000, guid: 0198218525425d546b5132f3884567d6, type: 3}
   ItemName: "Mj\xF6lnir"
   ItemDescription: "Behold the Celestial Thunderstrike, a legendary Mj\xF6lnir forged
@@ -23,4 +23,4 @@ MonoBehaviour:
   ItemBuyingPrice: 2000
   ItemSellingPrice: 1990
   ItemWeight: 100
-  itemRarity: 4
+  ItemRarity: 4

@@ -298,7 +298,7 @@ MonoBehaviour:
   shopView: {fileID: 666958650}
   shopScriptableObject: {fileID: 11400000, guid: 113a84b0dfbd8ea48ac60dd618430709, type: 2}
   itemDescriptionView: {fileID: 1540359996}
-  ItemDescriptionBoxButton: {fileID: 1095411991}
+  itemDescriptionBoxButton: {fileID: 1095411991}
   itemQuantityView: {fileID: 587597429}
   moneyView: {fileID: 1409497722}
   confirmationBoxView: {fileID: 809920995}
@@ -3618,7 +3618,7 @@ MonoBehaviour:
   itemQuantity: {fileID: 677014570}
   minusButton: {fileID: 1413968751}
   plusButton: {fileID: 1594639374}
-  ConfirmationButtonText: {fileID: 224321171}
+  confirmationButtonText: {fileID: 1777532490}
   confirmationBoxButton: {fileID: 691396577}
 --- !u!1 &607768548
 GameObject:
@@ -3907,21 +3907,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9683dde389b1894182a52724d3dc29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialButton: {fileID: 1822952783}
-  ArmorButton: {fileID: 1585242136}
-  WeaponButton: {fileID: 1061556900}
-  ConsumableButton: {fileID: 1069862054}
-  TreasureButton: {fileID: 1412260478}
-  Material: {fileID: 1099221210}
-  Armor: {fileID: 357750806}
-  Weapon: {fileID: 1391996776}
-  Consumable: {fileID: 1556807792}
-  Treasure: {fileID: 1955090021}
-  MaterialContentTransform: {fileID: 193220616}
-  ArmorContentTransform: {fileID: 1387559211}
-  WeaponContentTransform: {fileID: 776464641}
-  ConsumableContentTransform: {fileID: 2144101326}
-  TreasureContentTransform: {fileID: 1818654990}
+  materialButton: {fileID: 1822952783}
+  armorButton: {fileID: 1585242136}
+  weaponButton: {fileID: 1061556900}
+  consumableButton: {fileID: 1069862054}
+  treasureButton: {fileID: 1412260478}
+  material: {fileID: 1099221210}
+  armor: {fileID: 357750806}
+  weapon: {fileID: 1391996776}
+  consumable: {fileID: 1556807792}
+  treasure: {fileID: 1955090021}
+  materialContentTransform: {fileID: 193220616}
+  armorContentTransform: {fileID: 1387559211}
+  weaponContentTransform: {fileID: 776464641}
+  consumableContentTransform: {fileID: 2144101326}
+  treasureContentTransform: {fileID: 1818654990}
 --- !u!1 &677014568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6068,8 +6068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac58e9a8ccc3c7498a8a431e84a09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusic: {fileID: 1559569451}
-  SoundEffect: {fileID: 951778435}
+  backgroundMusic: {fileID: 1559569451}
+  soundEffect: {fileID: 951778435}
   soundTypes:
   - soundType: 0
     soundAudio: {fileID: 8300000, guid: dc6546aa1cc09fe4c92ccbec8b2fe0b4, type: 3}
@@ -7456,7 +7456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc713ebc9db5e824eb6d4d2a454762b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentArea: {fileID: 1896348067}
+  ContentArea: {fileID: 1896348067}
   inventoryWeight: {fileID: 1254072176}
 --- !u!1 &1180651782
 GameObject:
@@ -12446,7 +12446,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 215004841}
   m_HandleRect: {fileID: 215004840}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

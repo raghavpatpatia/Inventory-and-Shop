@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687cf3323c9a4fe4d9cb1c050ba26f25, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  inventoryWeight: 1000
-  inventoryItemView: {fileID: -6521676379760116432, guid: 65c72be8b2614e24b8093d25a8481c07, type: 3}
+  InventoryWeight: 500
+  InventoryItemView: {fileID: -6521676379760116432, guid: 65c72be8b2614e24b8093d25a8481c07, type: 3}

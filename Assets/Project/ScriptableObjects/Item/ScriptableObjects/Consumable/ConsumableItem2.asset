@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: ConsumableItem2
   m_EditorClassIdentifier: 
-  itemType: 3
+  ItemType: 3
   ItemIcon: {fileID: 21300000, guid: 0edcb30428af9c34b9114c75ee984bf2, type: 3}
   ItemName: Antidote Potion
   ItemDescription: The Antidote Potion sparkles with a luminescent azure hue, housed
@@ -22,4 +22,4 @@ MonoBehaviour:
   ItemBuyingPrice: 100
   ItemSellingPrice: 80
   ItemWeight: 2
-  itemRarity: 1
+  ItemRarity: 1

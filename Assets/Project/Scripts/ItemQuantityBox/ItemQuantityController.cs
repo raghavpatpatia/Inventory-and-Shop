@@ -24,24 +24,24 @@ public class ItemQuantityController
     private void OnInventoryItemClick(InventoryItemController inventoryItem)
     {
         isSelling = true;
-        itemQuantityView.SetItemIcon(inventoryItem.inventoryItemModel.itemData.ItemIcon);
-        itemQuantityView.SetItemName(inventoryItem.inventoryItemModel.itemData.ItemName);
+        itemQuantityView.SetItemIcon(inventoryItem.InventoryItemModel.ItemData.ItemIcon);
+        itemQuantityView.SetItemName(inventoryItem.InventoryItemModel.ItemData.ItemName);
         currentItemQuantity = 1;
         itemQuantityView.SetItemQuantity(currentItemQuantity);
-        maxItemQuantity = inventoryItem.inventoryItemModel.itemQuantity;
+        maxItemQuantity = inventoryItem.InventoryItemModel.ItemQuantity;
         itemQuantityView.SetConfirmationButtonText("Sell");
-        item = inventoryItem.inventoryItemModel.itemData;
+        item = inventoryItem.InventoryItemModel.ItemData;
     }
     private void OnShopItemClick(ShopItemController shopItem)
     {
         isSelling = false;
-        itemQuantityView.SetItemIcon(shopItem.shopItemModel.item.ItemIcon);
-        itemQuantityView.SetItemName(shopItem.shopItemModel.item.ItemName);
+        itemQuantityView.SetItemIcon(shopItem.ShopItemModel.Item.ItemIcon);
+        itemQuantityView.SetItemName(shopItem.ShopItemModel.Item.ItemName);
         currentItemQuantity = 1;
         itemQuantityView.SetItemQuantity(currentItemQuantity);
         maxItemQuantity = int.MaxValue;
         itemQuantityView.SetConfirmationButtonText("Buy");
-        item = shopItem.shopItemModel.item;
+        item = shopItem.ShopItemModel.Item;
     }
     public void OnConfirmationBoxButtonClick()
     {
@@ -68,15 +68,15 @@ public class ItemQuantityController
         {
             moneyController.AddMoney(item.ItemSellingPrice * currentItemQuantity);
             eventService.RemoveFromInventory.Invoke(item, currentItemQuantity);
-            soundController.PlayMusic(Sounds.SuccessfulItemSelling);
+            soundController.PlayMusic(Sounds.SUCCESSFULITEMSELLING);
         }
         else if (!isSelling)
         {
-            if (moneyController.currentMoney >= item.ItemBuyingPrice * currentItemQuantity)
+            if (moneyController.CurrentMoney >= item.ItemBuyingPrice * currentItemQuantity)
             {
                 moneyController.SubtractMoney(item.ItemBuyingPrice * currentItemQuantity);
                 eventService.AddToInventory.Invoke(item, currentItemQuantity);
-                soundController.PlayMusic(Sounds.SuccessfulItemBuying);
+                soundController.PlayMusic(Sounds.SUCCESSFULITEMBUYING);
             }
             else
             {

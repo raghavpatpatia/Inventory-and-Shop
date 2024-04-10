@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private ShopScriptableObject shopScriptableObject;
     [Header("Item Description Box")]
     [SerializeField] private ItemDescriptionView itemDescriptionView;
-    [SerializeField] private Button ItemDescriptionBoxButton;
+    [SerializeField] private Button itemDescriptionBoxButton;
     [Header("Item Quantity Box")]
     [SerializeField] private ItemQuantityView itemQuantityView;
     [Header("Money")]
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
         inventoryButton.onClick.AddListener(SetActiveInventoryView);
         gatherButton.onClick.AddListener(gatherButtonEvent.GatherItem);
         shopButton.onClick.AddListener(SetActiveShopView);
-        ItemDescriptionBoxButton.onClick.AddListener(SetActiveItemQuantityBox);
+        itemDescriptionBoxButton.onClick.AddListener(SetActiveItemQuantityBox);
         quitButton.onClick.AddListener(QuitGame);
     }
     private void Initialize()

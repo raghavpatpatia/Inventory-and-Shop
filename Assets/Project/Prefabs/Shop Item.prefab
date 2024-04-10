@@ -511,9 +511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857fc4ead2427804d9163bf19aaf588a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemIcon: {fileID: 8081079378088724661}
-  ItemName: {fileID: 2409487501929291199}
-  BuyButton: {fileID: 5429543072567193556}
+  itemIcon: {fileID: 8081079378088724661}
+  itemName: {fileID: 2409487501929291199}
+  buyButton: {fileID: 5429543072567193556}
 --- !u!1 &6556954110565586249
 GameObject:
   m_ObjectHideFlags: 0

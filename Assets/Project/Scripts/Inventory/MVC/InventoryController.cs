@@ -17,45 +17,45 @@ public class InventoryController
         eventService.AddToInventory.AddListener(AddToInventory);
         eventService.RemoveFromInventory.AddListener(RemoveFromInventory);
     }
-    public float GetInventoryWeight() => inventoryModel.inventoryWeight;
-    public float GetInventoryMaxWeight() => inventoryModel.inventoryMaxWeight;
+    public float GetInventoryWeight() => inventoryModel.InventoryWeight;
+    public float GetInventoryMaxWeight() => inventoryModel.InventoryMaxWeight;
     private void AddToInventory(ItemSO item, int quantity)
     {
         if (item.ItemWeight * quantity < GetInventoryMaxWeight() && item.ItemWeight * quantity + GetInventoryWeight() < GetInventoryMaxWeight())
         {
-            InventoryItemController existingItem = inventoryItemList.Find(inventoryItem => inventoryItem.inventoryItemModel.itemData.ItemName == item.ItemName);
+            InventoryItemController existingItem = inventoryItemList.Find(inventoryItem => inventoryItem.InventoryItemModel.ItemData.ItemName == item.ItemName);
             if (existingItem != null)
             {
                 existingItem.IncreaseQuantity(quantity);
-                inventoryModel.IncreaseInventoryWeight(existingItem.inventoryItemModel.itemData.ItemWeight * quantity);
+                inventoryModel.IncreaseInventoryWeight(existingItem.InventoryItemModel.ItemData.ItemWeight * quantity);
                 inventoryView.SetInventoryWeightText();
             }
             else
                 CreateNewItem(item, quantity);
         }
         else
-            eventService.DisplayMessage.Invoke("Cannot add items to inventory.");
+            eventService.DisplayMessage.Invoke("Cannot add Items to inventory.");
     }
     private void RemoveFromInventory(ItemSO item, int quantity)
     {
-        InventoryItemController existingItem = inventoryItemList.Find(inventoryItem => inventoryItem.inventoryItemModel.itemData.ItemName == item.ItemName);
+        InventoryItemController existingItem = inventoryItemList.Find(inventoryItem => inventoryItem.InventoryItemModel.ItemData.ItemName == item.ItemName);
         if (existingItem != null && quantity > 0)
         {
             existingItem.DecreaseQuantity(quantity);
-            inventoryModel.DecreaseInventoryWeight(existingItem.inventoryItemModel.itemData.ItemWeight * quantity);
+            inventoryModel.DecreaseInventoryWeight(existingItem.InventoryItemModel.ItemData.ItemWeight * quantity);
             inventoryView.SetInventoryWeightText();
         }
         else
         {
-            eventService.DisplayMessage.Invoke("No such item in inventory.");
+            eventService.DisplayMessage.Invoke("No such Item in inventory.");
         }
     }
     private void CreateNewItem(ItemSO item, int quantity)
     {
-        InventoryItemView itemView = GameObject.Instantiate<InventoryItemView>(inventoryModel.inventoryItem, inventoryView.contentArea.transform);
+        InventoryItemView itemView = GameObject.Instantiate<InventoryItemView>(inventoryModel.InventoryItem, inventoryView.ContentArea.transform);
         InventoryItemController newItem = new InventoryItemController(item, itemView, eventService);
         newItem.IncreaseQuantity(quantity);
-        inventoryModel.IncreaseInventoryWeight(newItem.inventoryItemModel.itemData.ItemWeight * quantity);
+        inventoryModel.IncreaseInventoryWeight(newItem.InventoryItemModel.ItemData.ItemWeight * quantity);
         inventoryView.SetInventoryWeightText();
         inventoryItemList.Add(newItem);
     }

@@ -20,16 +20,16 @@ public class ShopController
         List<ItemSO> Items = SortItemList();
         foreach(ItemSO item in Items)
         {
-            if (item.itemType == ItemType.Material) CreateShopItem(material, item);
-            else if (item.itemType == ItemType.Armor) CreateShopItem(armor, item);
-            else if (item.itemType == ItemType.Weapon) CreateShopItem(weapon, item);
-            else if (item.itemType == ItemType.Consumable) CreateShopItem(consumable, item);
-            else if (item.itemType == ItemType.Treasure) CreateShopItem(treasure, item);
+            if (item.ItemType == ItemType.MATERIAL) CreateShopItem(material, item);
+            else if (item.ItemType == ItemType.ARMOR) CreateShopItem(armor, item);
+            else if (item.ItemType == ItemType.WEAPON) CreateShopItem(weapon, item);
+            else if (item.ItemType == ItemType.CONSUMABLE) CreateShopItem(consumable, item);
+            else if (item.ItemType == ItemType.TREASURE) CreateShopItem(treasure, item);
         }
     }
     private void CreateShopItem(Transform transform, ItemSO item)
     {
-        ShopItemView shopItem = shopModel.shopItem;
+        ShopItemView shopItem = shopModel.ShopItem;
         shopItem = GameObject.Instantiate<ShopItemView>(shopItem, transform);
         ShopItemController shopItemController = new ShopItemController(item, shopItem, eventService);
     }
@@ -40,13 +40,13 @@ public class ShopController
         List<ItemSO> rareItemList = new List<ItemSO>();
         List<ItemSO> epicItemList = new List<ItemSO>();
         List<ItemSO> legendaryItemList = new List<ItemSO>();
-        foreach (ItemSO item in itemSOList.items)
+        foreach (ItemSO item in itemSOList.Items)
         {
-            if (item.itemRarity == ItemRarity.VeryCommon) veryCommonItemList.Add(item);
-            else if (item.itemRarity == ItemRarity.Common) commonItemList.Add(item);
-            else if (item.itemRarity == ItemRarity.Rare) rareItemList.Add(item);
-            else if (item.itemRarity == ItemRarity.Epic) epicItemList.Add(item);
-            else if (item.itemRarity == ItemRarity.Legendary) legendaryItemList.Add(item);
+            if (item.ItemRarity == ItemRarity.VERYCOMMON) veryCommonItemList.Add(item);
+            else if (item.ItemRarity == ItemRarity.COMMON) commonItemList.Add(item);
+            else if (item.ItemRarity == ItemRarity.RARE) rareItemList.Add(item);
+            else if (item.ItemRarity == ItemRarity.EPIC) epicItemList.Add(item);
+            else if (item.ItemRarity == ItemRarity.LEGENDARY) legendaryItemList.Add(item);
         }
         veryCommonItemList = SortSingleList(veryCommonItemList);
         commonItemList = SortSingleList(commonItemList);

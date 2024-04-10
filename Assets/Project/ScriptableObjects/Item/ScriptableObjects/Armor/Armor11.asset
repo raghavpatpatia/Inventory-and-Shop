@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: Armor11
   m_EditorClassIdentifier: 
-  itemType: 1
+  ItemType: 1
   ItemIcon: {fileID: 21300000, guid: 92ae13a49fa65af46906da8029caf780, type: 3}
   ItemName: Rudraksha Necklace
   ItemDescription: 'Adorned in ethereal armor that gleams with divine radiance, the
@@ -24,4 +24,4 @@ MonoBehaviour:
   ItemBuyingPrice: 5000
   ItemSellingPrice: 4800
   ItemWeight: 5
-  itemRarity: 4
+  ItemRarity: 4

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0401d7fce55b7547bc3be61063c47f3, type: 3}
   m_Name: Weapon5
   m_EditorClassIdentifier: 
-  itemType: 2
+  ItemType: 2
   ItemIcon: {fileID: 21300000, guid: b6827d89660e3f440aae922e041e2a38, type: 3}
   ItemName: Iron Axe
   ItemDescription: Behold the Embersteel Cleaver, a common fantasy Iron Axe infused
@@ -22,4 +22,4 @@ MonoBehaviour:
   ItemBuyingPrice: 80
   ItemSellingPrice: 70
   ItemWeight: 10
-  itemRarity: 1
+  ItemRarity: 1

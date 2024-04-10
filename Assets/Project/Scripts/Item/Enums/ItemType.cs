@@ -1,8 +1,8 @@
 ﻿public enum ItemType
 {
-    Material,
-    Armor,
-    Weapon,
-    Consumable,
-    Treasure
+    MATERIAL,
+    ARMOR,
+    WEAPON,
+    CONSUMABLE,
+    TREASURE
 }

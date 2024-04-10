@@ -1,14 +1,14 @@
 ﻿public class InventoryItemModel
 {
     private InventoryItemController inventoryItemController;
-    public int itemQuantity;
-    public ItemSO itemData { get; private set; }
+    public int ItemQuantity;
+    public ItemSO ItemData { get; private set; }
     public InventoryItemModel(ItemSO itemData, InventoryItemController inventoryItemController)
     {
         this.inventoryItemController = inventoryItemController;
-        this.itemData = itemData;
-        itemQuantity = 0;
+        this.ItemData = itemData;
+        ItemQuantity = 0;
     }
-    public void IncreaseItemQuantity(int amount) => itemQuantity += amount;
-    public void DecreaseItemQuantity(int amount) => itemQuantity -= amount;
+    public void IncreaseItemQuantity(int amount) => ItemQuantity += amount;
+    public void DecreaseItemQuantity(int amount) => ItemQuantity -= amount;
 }
